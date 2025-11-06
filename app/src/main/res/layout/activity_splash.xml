@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
+    >
+
+
+    <ImageView
+        android:id="@+id/bgGradient"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/gradient_bg"
+        android:scaleType="centerCrop"
+        android:alpha="0.8" />
+
+    <!-- App name glowing -->
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EcoTrackU"
+        android:textColor="#00FFFF"
+        android:textSize="46sp"
+        android:fontFamily="serif"
+        android:layout_centerInParent="true"
+        android:shadowColor="#00E5FF"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="20" />
+
+</RelativeLayout>
