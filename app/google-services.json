@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "851909107993",
+    "firebase_url": "https://ecotracku-f6723-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ecotracku-f6723",
+    "storage_bucket": "ecotracku-f6723.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851909107993:android:7d6ea790b9c7c16b6fe588",
+        "android_client_info": {
+          "package_name": "com.example.ecotrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHhO2F4HfTM6NjTQMHiXaDrsu0gdaFTZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851909107993:android:94d8ff3a8bf491746fe588",
+        "android_client_info": {
+          "package_name": "com.example.ecotracku"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHhO2F4HfTM6NjTQMHiXaDrsu0gdaFTZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

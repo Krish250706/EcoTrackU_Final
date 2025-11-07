@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/walkLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_horizontal">
+
+    <!-- 🔙 Back Button -->
+    <TextView
+        android:id="@+id/backButtonWalk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="← Back to Home"
+        android:textColor="#00BCD4"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:layout_gravity="start"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="15dp" />
+
+    <!-- 🚶‍♂️ Title -->
+    <TextView
+        android:id="@+id/walkTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Walking Tracker"
+        android:textColor="#00BCD4"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 💬 Status -->
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connect Google Fit to start tracking"
+        android:textColor="#B2EBF2"
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- 👣 Steps Count -->
+    <TextView
+        android:id="@+id/todaySteps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today's steps: 0"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 📏 Distance -->
+    <TextView
+        android:id="@+id/todayDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance: 0.0 km"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_marginBottom="25dp" />
+
+    <!-- 🔘 Buttons -->
+    <Button
+        android:id="@+id/btnConnectFit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Connect Google Fit"
+        android:backgroundTint="#00BCD4"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/btnReadToday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Read Today's Steps"
+        android:backgroundTint="#00BCD4"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/btnSimulate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simulate +500 steps"
+        android:backgroundTint="#00BCD4"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

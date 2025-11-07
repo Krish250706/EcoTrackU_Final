@@ -1,115 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_bg"
-    android:padding="20dp">
+    android:background="#000000"
+    tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/homeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:padding="24dp">
 
-
+        <!-- 🌍 App Title -->
         <TextView
-            android:id="@+id/tvEcoPoints"
+            android:id="@+id/appTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🌱 Eco Points: 0"
-            android:textColor="#00FFFF"
-            android:textSize="28sp"
+            android:text="EcoTrackU"
+            android:textColor="#00BCD4"
+            android:textSize="36sp"
             android:textStyle="bold"
-            android:layout_marginBottom="20dp" />
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center" />
 
+        <!-- 🌿 Subtitle -->
+        <TextView
+            android:id="@+id/appSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Eco Lifestyle Companion"
+            android:textColor="#B2EBF2"
+            android:textSize="16sp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center" />
 
-        <LinearLayout
+        <!-- 🌎 Earth Image -->
+        <ImageView
+            android:id="@+id/homeEarth"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/earth"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="Earth image" />
+
+        <!-- 🟩 Dashboard Grid -->
+        <GridLayout
+            android:id="@+id/dashboardGrid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/card_bg"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="20dp">
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:rowOrderPreserved="false"
+            android:useDefaultMargins="true"
+            android:layout_gravity="center">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🌿 Daily Green Challenges"
-                android:textColor="#00FFFF"
-                android:textSize="20sp"
-                android:layout_marginBottom="12dp" />
+            <!-- Eco Points -->
+            <LinearLayout
+                style="@style/DashboardCard">
+                <ImageView
+                    style="@style/DashboardIcon"
+                    android:src="@drawable/ic_leaf" />
+                <TextView
+                    style="@style/DashboardText"
+                    android:text="Eco Points" />
+            </LinearLayout>
 
+            <!-- Cycling Tracker -->
+            <LinearLayout
+                style="@style/DashboardCard">
+                <ImageView
+                    style="@style/DashboardIcon"
+                    android:src="@drawable/ic_cycle" />
+                <TextView
+                    style="@style/DashboardText"
+                    android:text="Cycling Tracker" />
+            </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/task1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Recycle plastic waste ♻️"
-                android:textColor="#FFFFFF"
-                android:buttonTint="#00FFFF"
-                android:padding="4dp" />
+            <!-- Walking Tracker -->
+            <LinearLayout
+                style="@style/DashboardCard">
+                <ImageView
+                    style="@style/DashboardIcon"
+                    android:src="@drawable/ic_walk" />
+                <TextView
+                    style="@style/DashboardText"
+                    android:text="Walking Tracker" />
+            </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/task2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Plant a tree 🌳"
-                android:textColor="#FFFFFF"
-                android:buttonTint="#00FFFF"
-                android:padding="4dp" />
+            <!-- Leaderboard -->
+            <LinearLayout
+                android:id="@+id/leaderboardButton"
+                style="@style/DashboardCard">
+                <ImageView
+                    style="@style/DashboardIcon"
+                    android:src="@drawable/ic_leaderboard" />
+                <TextView
+                    style="@style/DashboardText"
+                    android:text="Leaderboard" />
+            </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/task3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Use public transport 🚌"
-                android:textColor="#FFFFFF"
-                android:buttonTint="#00FFFF"
-                android:padding="4dp" />
-        </LinearLayout>
+            <!-- Graphs -->
+            <LinearLayout
+                style="@style/DashboardCard">
+                <ImageView
+                    style="@style/DashboardIcon"
+                    android:src="@drawable/ic_graph" />
+                <TextView
+                    style="@style/DashboardText"
+                    android:text="Progress Graphs" />
+            </LinearLayout>
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/btnWalk"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🚶 Track Walking Distance"
-                android:textColor="#00FFFF"
-                android:backgroundTint="#1F1F1F"
-                android:layout_marginBottom="8dp" />
-
-            <Button
-                android:id="@+id/btnCycle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🚴 Track Cycling Distance"
-                android:textColor="#00FFFF"
-                android:backgroundTint="#1F1F1F"
-                android:layout_marginBottom="8dp" />
-
-            <Button
-                android:id="@+id/btnLeaderboard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🏆 Leaderboard"
-                android:textColor="#00FFFF"
-                android:backgroundTint="#1F1F1F"
-                android:layout_marginBottom="8dp" />
-
-            <Button
-                android:id="@+id/btnGraphs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="📊 View Progress"
-                android:textColor="#00FFFF"
-                android:backgroundTint="#1F1F1F" />
-        </LinearLayout>
-
+            <!-- Shopping Center -->
+            <LinearLayout
+                style="@style/DashboardCard">
+                <ImageView
+                    style="@style/DashboardIcon"
+                    android:src="@drawable/ic_shopping" />
+                <TextView
+                    style="@style/DashboardText"
+                    android:text="Eco Shop" />
+            </LinearLayout>
+        </GridLayout>
     </LinearLayout>
 </ScrollView>

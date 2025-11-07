@@ -1,46 +1,94 @@
 package com.example.ecotracku;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.CheckBox;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.GridLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int ecoPoints = 0;
-    private TextView pointsView;
-    private CheckBox challenge1, challenge2, challenge3;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
-        pointsView = findViewById(R.id.ecoPoints);
-        challenge1 = findViewById(R.id.challenge1);
-        challenge2 = findViewById(R.id.challenge2);
-        challenge3 = findViewById(R.id.challenge3);
 
-        Button walkBtn = findViewById(R.id.walkBtn);
-        Button cycleBtn = findViewById(R.id.cycleBtn);
-        Button leaderboardBtn = findViewById(R.id.leaderboardBtn);
-        Button graphsBtn = findViewById(R.id.graphsBtn);
+        TextView appTitle = findViewById(R.id.appTitle);
+        TextView appSubtitle = findViewById(R.id.appSubtitle);
+        GridLayout dashboardGrid = findViewById(R.id.dashboardGrid);
 
-        // simple UI-only buttons (non-functional for now)
-        walkBtn.setOnClickListener(v -> { /* future: open tracking */ });
-        cycleBtn.setOnClickListener(v -> { /* future: open tracking */ });
-        leaderboardBtn.setOnClickListener(v -> { /* future: open leaderboard */ });
-        graphsBtn.setOnClickListener(v -> { /* future: open charts */ });
 
-        challenge1.setOnCheckedChangeListener((buttonView, isChecked) -> updatePoints(isChecked));
-        challenge2.setOnCheckedChangeListener((buttonView, isChecked) -> updatePoints(isChecked));
-        challenge3.setOnCheckedChangeListener((buttonView, isChecked) -> updatePoints(isChecked));
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        Animation slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up);
+
+
+        appTitle.startAnimation(fadeIn);
+        appSubtitle.startAnimation(fadeIn);
+
+
+        int delay = 200;
+        for (int i = 0; i < dashboardGrid.getChildCount(); i++) {
+            View card = dashboardGrid.getChildAt(i);
+            card.setAlpha(0f);
+            card.animate()
+                    .alpha(1f)
+                    .translationYBy(-30)
+                    .setStartDelay(delay)
+                    .setDuration(600)
+                    .start();
+            delay += 150;
+
+
+            int index = i;
+            card.setOnClickListener(v -> handleCardClick(index));
+        }
     }
 
-    private void updatePoints(boolean add) {
-        ecoPoints += add ? 10 : -10;
-        if (ecoPoints < 0) ecoPoints = 0;
-        pointsView.setText("Eco Points: " + ecoPoints);
+    // 🧭 Handle dashboard card clicks
+    private void handleCardClick(int index) {
+        switch (index) {
+            case 0:
+
+                startActivity(new Intent(MainActivity.this, EcoTasksActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                break;
+
+            case 1:
+
+                startActivity(new Intent(MainActivity.this, CycleActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                break;
+
+            case 2:
+
+                startActivity(new Intent(MainActivity.this, WalkActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                break;
+
+            case 3:
+
+                startActivity(new Intent(MainActivity.this, LeaderboardActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                break;
+
+            case 4:
+
+                Toast.makeText(this, getString(R.string.coming_soon_graphs), Toast.LENGTH_SHORT).show();
+                break;
+
+            case 5:
+
+                Toast.makeText(this, getString(R.string.coming_soon_shop), Toast.LENGTH_SHORT).show();
+                break;
+
+            default:
+                break;
+        }
     }
 }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- 🔙 Back Button -->
+        <TextView
+            android:id="@+id/backButtonCycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Back to Home"
+            android:textColor="#00BCD4"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+
+        <TextView
+            android:id="@+id/cycleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cycling Tracker"
+            android:textColor="#00BCD4"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/todayDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today's cycling: 0.0 km"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btnConnectFit"
+            style="@style/CyanButton"
+            android:text="Connect Google Fit" />
+
+        <Button
+            android:id="@+id/btnSubscribe"
+            style="@style/CyanButton"
+            android:text="Subscribe to Cycling Data"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnReadToday"
+            style="@style/CyanButton"
+            android:text="Read Today's Cycling Distance"
+            android:layout_marginTop="12dp" />
+
+        <!-- Manual simulate (for demos) -->
+        <Button
+            android:id="@+id/btnSimulate"
+            style="@style/CyanButton"
+            android:text="Simulate +0.5 km (Demo)"
+            android:layout_marginTop="18dp" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#80DEEA"
+            android:layout_marginTop="20dp"
+            android:text="Status: Not connected" />
+
+    </LinearLayout>
+</ScrollView>
